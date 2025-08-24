@@ -1,6 +1,7 @@
 import { StyleSheet, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Button } from '~/components/Button';
+import { Fab } from '~/components/Fab';
 import { ds } from '~/constants';
 
 export default function Overview() {
@@ -11,6 +12,7 @@ export default function Overview() {
           <Text style={ds.font.heading.h1}>Overview</Text>
           <Button title="Primary Button" onPress={() => {}} />
           <Button title="Secondary Button" variant="secondary" onPress={() => {}} />
+          <Fab onPress={() => {}} />
         </View>
       </SafeAreaView>
     </View>
