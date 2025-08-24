@@ -1,14 +1,18 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { ScrollView, StyleSheet, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { ds } from '~/constants';
-import { Button, Fab, Tags, TextField } from '~/components';
+import { Button, Card, Fab, Tags, TextField } from '~/components';
 
 export default function Overview() {
   return (
-    <View style={styles.container}>
-      <SafeAreaView>
-        <View style={styles.buttonContainer}>
-          <Text style={ds.font.heading.h1}>Overview</Text>
+    <SafeAreaView style={styles.safeArea}>
+      <View style={styles.container}>
+        <Text style={ds.font.heading.h1}>Overview</Text>
+        <ScrollView
+          style={styles.scrollView}
+          contentContainerStyle={styles.scrollContent}
+          showsVerticalScrollIndicator={false}
+          showsHorizontalScrollIndicator={false}>
           <Button title="Primary Button" onPress={() => {}} />
           <Button title="Secondary Button" variant="secondary" onPress={() => {}} />
           <Fab icon="add" onPress={() => {}} />
@@ -22,23 +26,33 @@ export default function Overview() {
             onSelectionChange={() => {}}
           />
           <TextField label="TextField" placeholder="TextField" onPress={() => {}} />
-        </View>
-      </SafeAreaView>
-    </View>
+          <Card
+            imageSource={require('~/assets/images/card-image.jpg')}
+            title="Card Title"
+            buttonTitle="Button"
+            onButtonPress={() => {}}
+          />
+        </ScrollView>
+      </View>
+    </SafeAreaView>
   );
 }
 
 export const styles = StyleSheet.create({
-  container: {
+  safeArea: {
     flex: 1,
-    justifyContent: 'flex-start',
-    padding: ds.spacing.md,
     backgroundColor: ds.colors.light.lightest,
   },
-  buttonContainer: {
-    flexDirection: 'column',
+  container: {
+    flex: 1,
+    padding: ds.spacing.md,
+    gap: ds.spacing.md,
+  },
+  scrollView: {
+    flex: 1,
+  },
+  scrollContent: {
     gap: ds.spacing.md,
     alignItems: 'center',
-    width: '100%',
   },
 });
