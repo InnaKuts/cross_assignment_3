@@ -32,7 +32,7 @@ Card.displayName = 'Card';
 
 const styles = StyleSheet.create({
   container: {
-    width: '100%',
+    flex: 1,
     borderRadius: ds.borderRadius.md,
     overflow: 'hidden',
     backgroundColor: ds.colors.highlight.lightest,
