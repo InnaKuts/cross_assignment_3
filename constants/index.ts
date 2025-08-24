@@ -1,8 +1,6 @@
 import { colors } from './colors';
 import { size } from './size';
-import { semanticFonts, SemanticFontStyle } from './fonts';
-
-export type { SemanticFontStyle };
+import { semanticFonts } from './fonts';
 
 export const ds = {
   colors,
@@ -25,6 +23,14 @@ export const ds = {
     xl: size[5],
     xxl: size[6],
     full: 9999,
+  },
+
+  borderWidth: {
+    xs: 1,
+    sm: 1.5,
+    md: 2,
+    lg: 2.5,
+    xl: 3,
   },
 
   font: semanticFonts,

@@ -17,81 +17,88 @@ export const size = {
   xxl: 24,
 } as const;
 
-export type SemanticFontStyle = {
-  family?: string;
-  size: number;
-  weight: number;
-  lineHeight?: number;
-};
-
-export const semanticFonts: Record<string, Record<string, SemanticFontStyle>> = {
+export const semanticFonts = {
   heading: {
     h1: {
-      size: size.xxl,
-      weight: font.weight.extrabold,
+      fontFamily: font.family,
+      fontSize: size.xxl,
+      fontWeight: font.weight.extrabold,
     },
     h2: {
-      size: size.xl,
-      weight: font.weight.extrabold,
+      fontFamily: font.family,
+      fontSize: size.xl,
+      fontWeight: font.weight.extrabold,
     },
     h3: {
-      size: size.lg,
-      weight: font.weight.extrabold,
+      fontFamily: font.family,
+      fontSize: size.lg,
+      fontWeight: font.weight.extrabold,
     },
     h4: {
-      size: size.md,
-      weight: font.weight.bold,
+      fontFamily: font.family,
+      fontSize: size.md,
+      fontWeight: font.weight.bold,
     },
     h5: {
-      size: size.sm,
-      weight: font.weight.bold,
+      fontFamily: font.family,
+      fontSize: size.sm,
+      fontWeight: font.weight.bold,
     },
   },
   body: {
     xl: {
-      size: size.xl,
-      weight: font.weight.regular,
+      fontFamily: font.family,
+      fontSize: size.xl,
+      fontWeight: font.weight.regular,
       lineHeight: 24,
     },
     lg: {
-      size: size.lg,
-      weight: font.weight.regular,
+      fontFamily: font.family,
+      fontSize: size.lg,
+      fontWeight: font.weight.regular,
       lineHeight: 22,
     },
     md: {
-      size: size.md,
-      weight: font.weight.regular,
+      fontFamily: font.family,
+      fontSize: size.md,
+      fontWeight: font.weight.regular,
       lineHeight: 20,
     },
     sm: {
-      size: size.sm,
-      weight: font.weight.regular,
+      fontFamily: font.family,
+      fontSize: size.sm,
+      fontWeight: font.weight.regular,
       lineHeight: 16,
     },
     xs: {
-      size: size.xs,
-      weight: font.weight.regular,
+      fontFamily: font.family,
+      fontSize: size.xs,
+      fontWeight: font.weight.regular,
       lineHeight: 14,
     },
   },
   action: {
     lg: {
-      size: size.md,
-      weight: font.weight.semibold,
+      fontFamily: font.family,
+      fontSize: size.md,
+      fontWeight: font.weight.semibold,
     },
     md: {
-      size: size.sm,
-      weight: font.weight.semibold,
+      fontFamily: font.family,
+      fontSize: size.sm,
+      fontWeight: font.weight.semibold,
     },
     sm: {
-      size: size.xs,
-      weight: font.weight.semibold,
+      fontFamily: font.family,
+      fontSize: size.xs,
+      fontWeight: font.weight.semibold,
     },
   },
   caption: {
     md: {
-      size: size.xs,
-      weight: font.weight.semibold,
+      fontFamily: font.family,
+      fontSize: size.xs,
+      fontWeight: font.weight.semibold,
     },
   },
 } as const;

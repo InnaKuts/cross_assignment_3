@@ -1,4 +1,18 @@
 export const colors = {
+  light: {
+    darkest: '#c5c6cc',
+    dark: '#d4d6dd',
+    medium: '#e8e9f1',
+    light: '#f8f9fe',
+    lightest: '#fff',
+  },
+  dark: {
+    darkest: '#1f2024',
+    dark: '#2f3036',
+    medium: '#494a50',
+    light: '#71727a',
+    lightest: '#8f9098',
+  },
   success: {
     dark: '#298267',
     medium: '#3ac0a0',
