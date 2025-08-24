@@ -7,6 +7,7 @@ export const ds = {
   size,
 
   spacing: {
+    xxs: 6,
     xs: size[2],
     sm: size[3],
     md: size[4],

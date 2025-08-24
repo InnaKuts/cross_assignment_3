@@ -5,16 +5,20 @@ import { ds } from '~/constants';
 
 type FabProps = {
   icon?: React.ComponentProps<typeof MaterialIcons>['name'];
+  variant?: 'primary' | 'secondary';
 } & TouchableOpacityProps;
 
-export const Fab = forwardRef<View, FabProps>(({ icon = 'add', ...touchableProps }, ref) => {
-  const buttonStyle = [styles.button, touchableProps.style];
-  return (
-    <TouchableOpacity ref={ref} {...touchableProps} style={buttonStyle}>
-      <MaterialIcons name={icon} size={ds.size[8]} color={ds.colors.light.lightest} />
-    </TouchableOpacity>
-  );
-});
+export const Fab = forwardRef<View, FabProps>(
+  ({ icon = 'add', variant = 'primary', ...touchableProps }, ref) => {
+    const buttonStyle = [styles.button, styles[`${variant}Button`], touchableProps.style];
+    const iconStyle = [styles[`${variant}Icon`]];
+    return (
+      <TouchableOpacity ref={ref} {...touchableProps} style={buttonStyle}>
+        <MaterialIcons name={icon} size={ds.size[8]} style={iconStyle} />
+      </TouchableOpacity>
+    );
+  }
+);
 
 Fab.displayName = 'Fab';
 
@@ -25,10 +29,22 @@ const styles = StyleSheet.create({
     padding: ds.spacing.sm,
     alignItems: 'center',
     justifyContent: 'center',
-    shadowColor: ds.colors.dark.darkest,
-    shadowOffset: { width: 0, height: 2 },
+  },
+  primaryButton: {
+    backgroundColor: ds.colors.highlight.darkest,
     shadowOpacity: 0.5,
     shadowRadius: 6,
     elevation: 4,
+    shadowColor: ds.colors.dark.darkest,
+    shadowOffset: { width: 0, height: 2 },
+  },
+  secondaryButton: {
+    backgroundColor: ds.colors.highlight.lightest,
+  },
+  primaryIcon: {
+    color: ds.colors.light.lightest,
+  },
+  secondaryIcon: {
+    color: ds.colors.highlight.darkest,
   },
 });
