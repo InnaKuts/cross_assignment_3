@@ -1,24 +1,12 @@
-import { useNavigation } from '@react-navigation/native';
-import { ScreenContent } from 'components/ScreenContent';
-
-import { StyleSheet, View } from 'react-native';
-
-import { Button } from '../components/Button';
+import { StyleSheet, Text, View } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function Overview() {
-  const navigation = useNavigation();
-
   return (
     <View style={styles.container}>
-      <ScreenContent path="screens/overview.tsx" title="Overview"></ScreenContent>
-      <Button
-        onPress={() =>
-          navigation.navigate('Details', {
-            name: 'Dan',
-          })
-        }
-        title="Show Details"
-      />
+      <SafeAreaView>
+        <Text>Overview</Text>
+      </SafeAreaView>
     </View>
   );
 }
@@ -26,6 +14,8 @@ export default function Overview() {
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
+    alignItems: 'center',
+    justifyContent: 'flex-start',
     padding: 24,
   },
 });
