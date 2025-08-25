@@ -2,6 +2,7 @@ import { forwardRef } from 'react';
 import { FlatList, ImageSourcePropType, StyleSheet, View } from 'react-native';
 import { Card } from './Card';
 import { ds } from '~/constants';
+import { useDeviceKind } from './helpers/useDeviceKind';
 
 type CardItem = {
   id: string;
@@ -16,7 +17,10 @@ type CardsGridProps = {
   columns?: number;
 };
 
-export const CardsGrid = forwardRef<FlatList, CardsGridProps>(({ cards, columns = 2 }, ref) => {
+export const CardsGrid = forwardRef<FlatList, CardsGridProps>(({ cards, columns }, ref) => {
+  const { isTablet, isDesktop } = useDeviceKind();
+  const resolvedColumns = columns ?? (isTablet ? 4 : isDesktop ? 6 : 2);
+
   const renderItem = ({ item }: { item: CardItem }) => (
     <Card
       key={item.id}
@@ -31,10 +35,11 @@ export const CardsGrid = forwardRef<FlatList, CardsGridProps>(({ cards, columns 
     <View style={styles.container}>
       <FlatList
         ref={ref}
+        key={`grid-${resolvedColumns}`}
         data={cards}
         renderItem={renderItem}
         keyExtractor={(item) => item.id}
-        numColumns={columns}
+        numColumns={resolvedColumns}
         showsVerticalScrollIndicator={false}
         showsHorizontalScrollIndicator={false}
         contentContainerStyle={styles.gridContainer}

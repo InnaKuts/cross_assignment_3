@@ -60,9 +60,13 @@ The project includes the following reusable components:
 - **Tags** - Horizontal tag list with selection
 - **TextField** - Input field with label
 
-### Component Screenshot
+### Component Screenshots
 
-![Components Overview](docs/assets/components.png)
+**Phone View:**
+![Components Overview - Phone](docs/assets/components_phone.png)
+
+**Tablet View:**
+![Components Overview - Tablet](docs/assets/components_tablet.png)
 
 ## 🛠️ Tech Stack
 

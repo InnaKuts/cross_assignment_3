@@ -6,6 +6,12 @@ export const ds = {
   colors,
   size,
 
+  breakpoints: {
+    phone: 0,
+    tablet: 768,
+    desktop: 1024,
+  },
+
   spacing: {
     xxs: 6,
     xs: size[2],
