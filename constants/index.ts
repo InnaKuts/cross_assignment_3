@@ -8,7 +8,7 @@ export const ds = {
 
   breakpoints: {
     phone: 0,
-    tablet: 768,
+    tablet: 728,
     desktop: 1024,
   },
 
